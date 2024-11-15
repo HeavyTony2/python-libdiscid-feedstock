@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/python-libdiscid-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/python-libdiscid-{{ version }}.tar.gz
   sha256: f681053ebd7406dc7e11cf702afaa5a2d595a0db2de5a026c8c3fa5539eb5750
 
 build:
