@@ -12,12 +12,15 @@ source:
 build:
   skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 4
+  number: 5
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
+    - python  # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
+    - cython >=0.15  # [build_platform != target_platform]
   host:
     - cython >=0.15
     - python
@@ -42,6 +45,7 @@ about:
   doc_url: https://pythonhosted.org/python-libdiscid/
   license: MIT
   license_file: LICENSE
+  description: python-libdiscid implements Python >= 3.6 bindings for libdiscid using Cython.
 
 extra:
   recipe-maintainers:
