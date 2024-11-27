@@ -25,7 +25,7 @@ requirements:
     - cython >=0.15
     - python
     - setuptools >=43
-    - pkgconfig
+  # - pkgconfig Is only an optional dependancy and happens to make the build fail
     - pip
     - libdiscid
   run:
